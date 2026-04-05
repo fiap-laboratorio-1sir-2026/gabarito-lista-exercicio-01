@@ -1,5 +1,5 @@
-# Lista de Exercícios 01 #
-### Exercícios de Rastreamento de Variáveis (teste de mesa)
+# Lista de Exercícios I #
+### Parte 01 - Exercícios de Rastreamento de Variáveis (teste de mesa)
 ### Exercício 01 — Rastreamento de Variáveis
 Considere o trecho de código abaixo:
 ```java
@@ -120,8 +120,7 @@ int par      = minutos % 2;
 
 **⚠️ Observação**: diff deve ser 0 — use isso para verificar se todos os passos anteriores estão corretos. Confira o gabarito no final do documento.
 
-## Exercícios de Programação
-### Algoritmos sequenciais com entrada, processamento e saída formatada
+## Parte 02 - Exercícios de Programação
 ### Exercício 06  — Cálculo de salário líquido
 Em uma empresa, o departamento de RH precisa calcular o salário líquido dos funcionários. Para isso, é necessário conhecer o valor da hora trabalhada, a quantidade de horas
 trabalhadas no mês e a alíquota de desconto do INSS a ser aplicada sobre o salário bruto.
