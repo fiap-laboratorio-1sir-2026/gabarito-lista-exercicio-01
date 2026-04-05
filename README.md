@@ -1,4 +1,5 @@
 # Lista de Exercícios 01 #
+### Exercícios de Rastreamento de Variáveis (teste de mesa)
 ### Exercício 01 — Rastreamento de Variáveis
 Considere o trecho de código abaixo:
 ```java
@@ -19,7 +20,7 @@ b = d;
 | a = c               |   |   |   |   |
 | b = d               |   |   |   |   |
 
-**Observação:** Rastreie o valor de cada variável após cada linha executada. 
+**⚠️ Observação:** Rastreie o valor de cada variável após cada linha executada. 
 
 ### Exercício 02 — Rastreamento de Variáveis
 Considere o trecho de código abaixo:
@@ -43,7 +44,7 @@ x = z % 3;
 | z = z + (x * y)        |   |   |   |
 | x = z % 3              |   |   |   |
 
-**Observação:** Atenção: após x = z % 3, o valor de x muda.
+**⚠️ Observação:** Atenção: após x = z % 3, o valor de x muda.
 
 ### Exercício 03 — Rastreamento de Variáveis
 Considere o trecho de código abaixo:
@@ -65,7 +66,7 @@ int soma    = centena + dezena + unidade;
 | unidade = resto1 % 10     |     |         |        |        |         |      |
 | soma = centena + dezena + unidade |     |         |        |        |         |      |
 
-**Observação:** Use / para a parte inteira e % para o resto em cada decomposição.
+**⚠️ Observação:** Use / para a parte inteira e % para o resto em cada decomposição.
 
 ### Exercício 04 — Rastreamento de Variáveis
 ```java
@@ -92,7 +93,7 @@ int par = b % 2;
 | b = c           |   |   |   |     |
 | int par = b % 2 |   |   |   |     |
 
-**Observação:** Guarde o valor antigo antes de sobrescrever — a ordem das atribuições é essencial.
+**⚠️ Observação:** Guarde o valor antigo antes de sobrescrever — a ordem das atribuições é essencial.
 
 ### Exercício 04 — Rastreamento de Variáveis
 ```java
@@ -117,4 +118,30 @@ int par      = minutos % 2;
 | diff = totalSeg - check|          |       |        |         |          |       |      |     |
 | par = minutos % 2      |          |       |        |         |          |       |      |     |
 
-**⚠️Observação**: diff deve ser 0 — use isso para verificar se todos os passos anteriores estão corretos. Confira o gabarito no final do documento.
+**⚠️ Observação**: diff deve ser 0 — use isso para verificar se todos os passos anteriores estão corretos. Confira o gabarito no final do documento.
+
+## Exercícios de Programação
+### Algoritmos sequenciais com entrada, processamento e saída formatada
+### Exercício 6  — Cálculo de salário líquido
+Em uma empresa, o departamento de RH precisa calcular o salário líquido dos funcionários. Para isso, é necessário conhecer o valor da hora trabalhada, a quantidade de horas
+trabalhadas no mês e a alíquota de desconto do INSS a ser aplicada sobre o salário bruto.
+
+Escreva um programa em Java que leia o valor da hora trabalhada (double), o número de horas trabalhadas no mês (inteiro) e a alíquota do INSS em percentual (double). O programa deverá calcular e exibir o salário bruto, o valor descontado pelo INSS e o salário líquido, todos com duas casas decimais.
+#### 📥 ENTRADAS
+| Variável       | Tipo    | Descrição                          |
+|----------------|---------|-----------------------------------|
+| valorHora      | double  | Valor de cada hora trabalhada     |
+| horasMes       | int     | Total de horas no mês             |
+| aliquotaINSS   | double  | Percentual de desconto do INSS    |
+
+#### 📤 SAÍDAS
+| Descrição              | Fórmula                          |
+|------------------------|----------------------------------|
+| Salário bruto (R$)     | valorHora × horasMes             |
+| Desconto INSS (R$)     | bruto × (alíquota / 100)         |
+| Salário líquido (R$)   | bruto − desconto                 |
+
+#### EXEMPLO
+**Entrada**: valorHora = 25.50  |  horasMes = 160  |  aliquotaINSS = 11.0  
+**Saída**:  Salário bruto: R$ 4080.00  |  Desconto INSS: R$ 448.80  |  Líquido: R$ 3631.20
+
