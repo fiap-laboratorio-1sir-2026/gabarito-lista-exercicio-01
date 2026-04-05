@@ -421,3 +421,78 @@ Considere que o consumo informado **sempre ultrapassa a franquia**.
 **Saída**:  Franquia: 15360.00 MB  |  Excedente: 1024.00 MB  |  Custo: R$ 51.20  |  Total: R$ 141.10
 
 **⚠️ Observação**: 1 GB = 1024 MB. Converta a franquia antes de calcular o excedente.
+
+### Exercício 14 — Montante e juros em aplicação (3 meses)
+Juros compostos são calculados sobre o montante acumulado a cada período.  
+A fórmula do montante é amplamente usada em simulações de investimentos.  
+Para calcular a potência fator³ sem usar **Math.pow()**, basta multiplicar o fator por si mesmo três vezes.
+
+Escreva um programa em Java que leia:
+- o capital inicial (**double**)  
+- a taxa de juros mensal em percentual (**double**)
+
+Considere um prazo fixo de **3 meses** (não precisa ser lido).
+O programa deverá calcular e exibir:
+- o fator de juros (**6 casas decimais**)  
+- o montante após 3 meses (**2 casas decimais**)  
+- o total de juros gerados (**2 casas decimais**)  
+
+**Não utilize 'Math.pow()'**.
+
+#### 📥 ENTRADAS
+| Variável     | Tipo   | Descrição                           |
+|--------------|--------|-------------------------------------|
+| capital      | double | Valor inicial aplicado em R$         |
+| taxaMensal   | double | Taxa de juros mensal (%)            |
+
+#### 📤 SAÍDAS
+| Descrição               | Fórmula                                      |
+|------------------------|----------------------------------------------|
+| Fator de juros         | 1 + taxaMensal / 100  (`%.6f`)               |
+| Montante (R$)          | capital × fator × fator × fator (`%.2f`)     |
+| Juros gerados (R$)     | montante − capital (`%.2f`)                  |
+
+#### EXEMPLO
+
+**Entrada**:  capital = 5000.0  |  taxaMensal = 2.5  
+**Saída**:  Fator: 1.025000  |  Montante: R$ 5384.45  |  Juros: R$ 384.45
+
+**⚠️ Observação**: 'fator * fator * fator' é equivalente a fator³ — essa técnica funciona para qualquer número fixo de períodos.
+
+### Exercício 15 — Tempo de viagem interplanetária e decomposição de unidades
+Sondas espaciais viajam a velocidades altíssimas, mas as distâncias no sistema solar são tão grandes que o tempo ainda é medido em anos, dias e horas.  
+Decompor o tempo total em unidades menores usa o mesmo raciocínio de divisão inteira e resto visto nos exercícios de dígitos.
+
+Escreva um programa em Java que leia:
+- a distância até o destino em km (**double**)  
+- a velocidade média da sonda em km/h (**double**)
+
+O programa deverá calcular e exibir:
+- o tempo total em horas  
+- os anos completos  
+- os dias restantes  
+- as horas restantes  
+- os minutos restantes  
+
+O tempo total deve ser exibido com **duas casas decimais** e as demais unidades como **inteiros**.
+
+#### 📥 ENTRADAS
+| Variável       | Tipo   | Descrição                        |
+|----------------|--------|----------------------------------|
+| distanciaKm    | double | Distância até o destino em km    |
+| velocidadeKmh  | double | Velocidade média da sonda em km/h |
+
+#### 📤 SAÍDAS
+| Descrição              | Fórmula                              |
+|------------------------|--------------------------------------|
+| Tempo total (horas)    | distanciaKm / velocidadeKmh          |
+| Anos completos         | totalHorasInt / 8760                 |
+| Dias restantes         | (totalHorasInt % 8760) / 24          |
+| Horas restantes        | (totalHorasInt % 8760) % 24          |
+| Minutos restantes      | (parte decimal) × 60                 |
+
+#### EXEMPLO
+**Entrada**:  distanciaKm = 628730000.0  |  velocidadeKmh = 60000.0  
+**Saída**:  Tempo: 10478.83 h  |  Anos: 1  |  Dias: 58  |  Horas: 14  |  Minutos: 49
+
+**⚠️ Observação**: Use '/' e '%' em sequência para cada nível da decomposição — o mesmo raciocínio do exercício de centenas, dezenas e unidades.
