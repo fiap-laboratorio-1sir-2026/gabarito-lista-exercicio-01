@@ -93,3 +93,28 @@ int par = b % 2;
 | int par = b % 2 |   |   |   |     |
 
 **Observação:** Guarde o valor antigo antes de sobrescrever — a ordem das atribuições é essencial.
+
+### Exercício 04 — Rastreamento de Variáveis
+```java
+int totalSeg = 3725;
+int horas    = totalSeg / 3600;
+int resto1   = totalSeg % 3600;
+int minutos  = resto1 / 60;
+int segundos = resto1 % 60;
+int check    = (horas*3600)+(minutos*60)+segundos;
+int diff     = totalSeg - check;
+int par      = minutos % 2;
+```
+#### Tabela de rastreamento
+| Linha                   | totalSeg | horas | resto1 | minutos | segundos | check | diff | par |
+|------------------------|----------|-------|--------|---------|----------|-------|------|-----|
+| totalSeg = 3725        |          |       |        |         |          |       |      |     |
+| horas = totalSeg / 3600|          |       |        |         |          |       |      |     |
+| resto1 = totalSeg % 3600|         |       |        |         |          |       |      |     |
+| minutos = resto1 / 60  |          |       |        |         |          |       |      |     |
+| segundos = resto1 % 60 |          |       |        |         |          |       |      |     |
+| check = (horas*3600)+(minutos*60)+segundos | | | | | | | | |
+| diff = totalSeg - check|          |       |        |         |          |       |      |     |
+| par = minutos % 2      |          |       |        |         |          |       |      |     |
+
+**⚠️Observação**: diff deve ser 0 — use isso para verificar se todos os passos anteriores estão corretos. Confira o gabarito no final do documento.
