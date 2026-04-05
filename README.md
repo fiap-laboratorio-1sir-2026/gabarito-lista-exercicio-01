@@ -181,7 +181,7 @@ O programa deverá calcular e exibir:
 
 **⚠️ Observação**: O prazo usa **divisão inteira (int / int)** — o resto dos km é descartado automaticamente.
 
-#### Exercício 08 — Rendimento mensal e imposto de renda
+### Exercício 08 — Rendimento mensal e imposto de renda
 Um investidor deseja saber quanto sua aplicação rendeu no mês e qual o imposto de renda a recolher.  
 O rendimento bruto é calculado sobre o capital aplicado; o imposto incide sobre o rendimento bruto; o rendimento líquido é o valor que efetivamente fica na conta do investidor.
 
@@ -214,8 +214,85 @@ Todos os valores devem ser exibidos com **duas casas decimais**.
 | Saldo total (R$)       | capital + rendLiquido               |
 
 #### EXEMPLO
-
 **Entrada**:  capital = 15000.0  |  taxaMensal = 0.85  |  aliquotaIR = 15.0  
 **Saída**:  Rend. bruto: R$ 127.50  |  Imposto: R$ 19.13  |  Líquido: R$ 108.38  |  Saldo: R$ 15108.38
 
 **⚠️ Observação**: Use `double` para preservar precisão nos cálculos encadeados.
+
+### Exercício 09 — Preço de venda com margem e desconto
+Uma loja de varejo precisa definir o preço de venda de seus produtos.  
+O comprador informa o custo de aquisição, a margem de lucro desejada e o percentual de desconto promocional.  
+O desconto é aplicado sobre o preço já marcado, **não sobre o custo**.
+
+Escreva um programa em Java que leia:
+- o custo do produto (**double**)  
+- a margem de lucro em percentual (**double**)  
+- o desconto promocional em percentual (**double**)
+
+O programa deverá calcular e exibir:
+- o preço base  
+- o valor do desconto  
+- o preço final ao cliente  
+- o lucro real obtido  
+
+Todos os valores devem ser exibidos com **duas casas decimais**.
+
+#### 📥 ENTRADAS
+| Variável | Tipo   | Descrição                                   |
+|----------|--------|---------------------------------------------|
+| custo    | double | Custo de aquisição do produto               |
+| margem   | double | Margem de lucro desejada (%)                |
+| desconto | double | Desconto promocional (%)                    |
+
+#### 📤 SAÍDAS
+| Descrição              | Fórmula                              |
+|------------------------|--------------------------------------|
+| Preço base (R$)        | custo × (1 + margem / 100)          |
+| Valor desconto (R$)    | precoBase × (desconto / 100)        |
+| Preço final (R$)       | precoBase − valorDesc               |
+| Lucro real (R$)        | precoFinal − custo                  |
+
+#### EXEMPLO
+**Entrada**:  custo = 120.0  |  margem = 40.0  |  desconto = 10.0  
+**Saída**:  Preço base: R$ 168.00  |  Desconto: R$ 16.80  |  Final: R$ 151.20  |  Lucro: R$ 31.20
+
+**⚠️ Observação**: O desconto incide sobre o **preço base**, não sobre o custo — leia o enunciado com atenção.
+
+### Exercício 10 — Necessidade calórica e macronutrientes
+Uma nutricionista precisa calcular a necessidade calórica diária de um paciente e distribuir as calorias entre carboidratos, proteínas e gorduras.  
+A necessidade energética é estimada pelo peso multiplicado por um fator de atividade física.
+
+Escreva um programa em Java que leia:
+- o peso do paciente em kg (**double**)  
+- o fator de atividade física (**double**)
+
+O programa deverá calcular e exibir:
+- o total de calorias  
+- a distribuição por macronutriente:
+  - 50% carboidratos  
+  - 30% proteínas  
+  - 20% gorduras  
+- a soma dos três como verificação  
+
+Utilize '%.0f' para exibir os valores **sem casas decimais**.
+
+#### 📥 ENTRADAS
+| Variável         | Tipo   | Descrição                          |
+|------------------|--------|------------------------------------|
+| pesoKg           | double | Peso do paciente em quilos         |
+| fatorAtividade   | double | Fator de atividade (ex: 33.0)      |
+
+#### 📤 SAÍDAS
+| Descrição              | Fórmula                           |
+|------------------------|-----------------------------------|
+| Total kcal             | pesoKg × fatorAtividade           |
+| Carboidratos (50%)     | kcalTotal × 0.50                  |
+| Proteínas (30%)        | kcalTotal × 0.30                  |
+| Gorduras (20%)         | kcalTotal × 0.20                  |
+| Verificação            | carbo + proteina + gordura        |
+
+#### EXEMPLO
+**Entrada**:  pesoKg = 70.0  |  fatorAtividade = 33.0  
+**Saída**:  Total: 2310 kcal  |  Carbo: 1155  |  Proteína: 693  |  Gordura: 462  |  Soma: 2310 kcal
+
+**⚠️ Observação**: A soma dos três macronutrientes deve ser igual ao total — use isso para confirmar que o código está correto.
