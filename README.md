@@ -296,3 +296,42 @@ Utilize '%.0f' para exibir os valores **sem casas decimais**.
 **Saída**:  Total: 2310 kcal  |  Carbo: 1155  |  Proteína: 693  |  Gordura: 462  |  Soma: 2310 kcal
 
 **⚠️ Observação**: A soma dos três macronutrientes deve ser igual ao total — use isso para confirmar que o código está correto.
+
+### Exercício 11 — Distância percorrida e velocidade final (MUV)
+O movimento uniformemente variado (MUV) descreve objetos que se movem com aceleração constante.  
+Essas fórmulas são usadas em simulações de veículos, jogos e sistemas embarcados.  
+A potência \(t^2\) deve ser calculada manualmente como 't * t'.
+
+Escreva um programa em Java que leia:
+- a velocidade inicial em m/s (**double**)  
+- a aceleração em m/s² (**double**)  
+- o tempo em segundos (**double**)
+
+O programa deverá calcular e exibir:
+- a velocidade final  
+- a distância total percorrida  
+- a parcela de distância devida exclusivamente à aceleração  
+
+Todos os valores devem ser exibidos com **duas casas decimais**.  
+**Não utilize 'Math.pow()'**.
+
+#### 📥 ENTRADAS
+| Variável | Tipo   | Descrição                      |
+|----------|--------|--------------------------------|
+| v0       | double | Velocidade inicial (m/s)       |
+| a        | double | Aceleração (m/s²)              |
+| t        | double | Tempo (s)                      |
+
+#### 📤 SAÍDAS
+| Descrição                     | Fórmula                              |
+|------------------------------|--------------------------------------|
+| Velocidade final (m/s)       | v0 + a × t                           |
+| Distância total (m)          | v0 × t + (a × t × t) / 2            |
+| Parcela acelerada (m)        | (a × t × t) / 2                     |
+
+#### EXEMPLO
+
+**Entrada**:  v0 = 10.0  |  a = 3.0  |  t = 5.0  
+**Saída**:  Vel. final: 25.00 m/s  |  Distância: 87.50 m  |  Parcela acelerada: 37.50 m
+
+**⚠️ Observação**: \(t^2\) deve ser escrito como 't * t' — não utilize funções prontas como 'Math.pow()'.
