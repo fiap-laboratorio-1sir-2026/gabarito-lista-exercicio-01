@@ -66,3 +66,30 @@ int soma    = centena + dezena + unidade;
 | soma = centena + dezena + unidade |     |         |        |        |         |      |
 
 **Observação:** Use / para a parte inteira e % para o resto em cada decomposição.
+
+### Exercício 04 — Rastreamento de Variáveis
+```java
+int a = 0;
+int b = 1;
+int c = a + b;
+a = b;
+b = c;
+c = a + b;
+a = b;
+b = c;
+int par = b % 2;
+```
+#### Tabela de rastreamento
+| Linha           | a | b | c | par |
+| --------------- | - | - | - | --- |
+| int a = 0       |   |   |   |     |
+| int b = 1       |   |   |   |     |
+| c = a + b       |   |   |   |     |
+| a = b           |   |   |   |     |
+| b = c           |   |   |   |     |
+| c = a + b       |   |   |   |     |
+| a = b           |   |   |   |     |
+| b = c           |   |   |   |     |
+| int par = b % 2 |   |   |   |     |
+
+**Observação:** Guarde o valor antigo antes de sobrescrever — a ordem das atribuições é essencial.
