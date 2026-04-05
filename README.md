@@ -334,4 +334,90 @@ Todos os valores devem ser exibidos com **duas casas decimais**.
 **Entrada**:  v0 = 10.0  |  a = 3.0  |  t = 5.0  
 **Saída**:  Vel. final: 25.00 m/s  |  Distância: 87.50 m  |  Parcela acelerada: 37.50 m
 
-**⚠️ Observação**: \(t^2\) deve ser escrito como 't * t' — não utilize funções prontas como 'Math.pow()'.
+**⚠️ Observação**: t² deve ser escrito como 't * t' — não utilize funções prontas como 'Math.pow()'.
+
+### Exercício 12 — Estimativa de material para construção
+Antes de iniciar uma obra, engenheiros calculam a quantidade de material necessário.  
+A área de tinta desconta a área de janelas e portas.  
+O volume de concreto da laje é dado pela área multiplicada pela espessura.  
+Esses cálculos fazem parte do orçamento preliminar de qualquer projeto.
+
+Escreva um programa em Java que leia:
+- a largura e a altura da parede (**double**)  
+- a quantidade de aberturas (**int**)  
+- a área média de cada abertura (**double**)  
+- a espessura da laje (**double**)
+
+O programa deverá calcular e exibir:
+- a área bruta  
+- a área líquida a pintar  
+- o volume de concreto  
+
+Todos com **duas casas decimais**.  
+
+Calcule também a quantidade de latas de tinta como **inteiro** — cada lata cobre **12 m²** (use cast para `int`).
+
+#### 📥 ENTRADAS
+| Variável       | Tipo   | Descrição                                 |
+|----------------|--------|--------------------------------------------|
+| largura        | double | Dimensões da parede (m)                    |
+| altura         | double | Dimensões da parede (m)                    |
+| aberturas      | int    | Número de janelas e portas                 |
+| areaAbertura   | double | Área média de cada abertura (m²)           |
+| espessura      | double | Espessura da laje (m)                      |
+
+#### 📤 SAÍDAS
+| Descrição              | Fórmula                                  |
+|------------------------|-------------------------------------------|
+| Área bruta (m²)        | largura × altura                          |
+| Área líquida (m²)      | bruta − (aberturas × areaAbertura)        |
+| Volume laje (m³)       | areaBruta × espessura                     |
+| Latas de tinta         | (int)(areaLiquida / 12)                   |
+
+#### EXEMPLO
+**Entrada**:  largura = 8.0  |  altura = 3.0  |  aberturas = 3  |  areaAbertura = 2.0  |  espessura = 0.12  
+**Saída**:  Área bruta: 24.00 m²  |  Líquida: 18.00 m²  |  Vol. laje: 2.88 m³  |  Latas: 1
+
+**⚠️ Observação**: O cast '(int)' trunca o decimal — o resultado corresponde ao número inteiro de latas completas.
+
+### Exercício 13 — Franquia de internet e custo do excedente
+Operadoras de telefonia cobram uma franquia mensal de dados e, caso o usuário ultrapasse o limite, é cobrado um valor por MB excedente.  
+O controle é feito em megabytes, mas a franquia é contratada em gigabytes.  
+Converter as unidades corretamente é essencial em sistemas de faturamento.
+
+Escreva um programa em Java que leia:
+- a franquia em GB (**double**)  
+- o consumo do mês em MB (**double**)  
+- o valor mensal do plano (**double**)  
+- o preço por MB excedente (**double**)
+
+O programa deverá calcular e exibir:
+- a franquia convertida para MB  
+- o excedente em MB  
+- o custo do excedente  
+- o total da fatura  
+
+Todos os valores devem ser exibidos com **duas casas decimais**.  
+Considere que o consumo informado **sempre ultrapassa a franquia**.
+
+#### 📥 ENTRADAS
+| Variável     | Tipo   | Descrição                              |
+|--------------|--------|----------------------------------------|
+| franquiaGB   | double | Franquia contratada em GB              |
+| consumoMB    | double | Consumo realizado em MB                |
+| valorPlano   | double | Mensalidade base em R$                 |
+| precoPorMB   | double | Preço por MB excedente em R$           |
+
+#### 📤 SAÍDAS
+| Descrição               | Fórmula                             |
+|------------------------|--------------------------------------|
+| Franquia em MB         | franquiaGB × 1024                   |
+| Excedente (MB)         | consumoMB − franquiaMB              |
+| Custo excedente (R$)   | excedente × precoPorMB              |
+| Total da fatura (R$)   | valorPlano + custoExc               |
+
+#### EXEMPLO
+**Entrada**:  franquiaGB = 15.0  |  consumoMB = 16384.0  |  valorPlano = 89.90  |  precoPorMB = 0.05  
+**Saída**:  Franquia: 15360.00 MB  |  Excedente: 1024.00 MB  |  Custo: R$ 51.20  |  Total: R$ 141.10
+
+**⚠️ Observação**: 1 GB = 1024 MB. Converta a franquia antes de calcular o excedente.
