@@ -44,3 +44,25 @@ x = z % 3;
 | x = z % 3              |   |   |   |
 
 **Observação:** Atenção: após x = z % 3, o valor de x muda.
+
+### Exercício 03 — Rastreamento de Variáveis
+Considere o trecho de código abaixo:
+```java
+int n = 347;
+int centena = n / 100;
+int resto1  = n % 100;
+int dezena  = resto1 / 10;
+int unidade = resto1 % 10;
+int soma    = centena + dezena + unidade;
+```
+#### Tabela de rastreamento
+| Linha                      | n   | centena | resto1 | dezena | unidade | soma |
+|---------------------------|-----|---------|--------|--------|---------|------|
+| int n = 347               |     |         |        |        |         |      |
+| centena = n / 100         |     |         |        |        |         |      |
+| resto1 = n % 100          |     |         |        |        |         |      |
+| dezena = resto1 / 10      |     |         |        |        |         |      |
+| unidade = resto1 % 10     |     |         |        |        |         |      |
+| soma = centena + dezena + unidade |     |         |        |        |         |      |
+
+**Observação:** Use / para a parte inteira e % para o resto em cada decomposição.
