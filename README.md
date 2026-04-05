@@ -122,7 +122,7 @@ int par      = minutos % 2;
 
 ## Exercícios de Programação
 ### Algoritmos sequenciais com entrada, processamento e saída formatada
-### Exercício 6  — Cálculo de salário líquido
+### Exercício 06  — Cálculo de salário líquido
 Em uma empresa, o departamento de RH precisa calcular o salário líquido dos funcionários. Para isso, é necessário conhecer o valor da hora trabalhada, a quantidade de horas
 trabalhadas no mês e a alíquota de desconto do INSS a ser aplicada sobre o salário bruto.
 
@@ -145,3 +145,77 @@ Escreva um programa em Java que leia o valor da hora trabalhada (double), o núm
 **Entrada**: valorHora = 25.50  |  horasMes = 160  |  aliquotaINSS = 11.0  
 **Saída**:  Salário bruto: R$ 4080.00  |  Desconto INSS: R$ 448.80  |  Líquido: R$ 3631.20
 
+### Exercício 07 — Custo de envio e prazo estimado
+Uma transportadora cobra um valor fixo por quilo mais uma taxa de seguro sobre o valor declarado da mercadoria.  
+O prazo de entrega é estimado dividindo a distância em km pela velocidade média de **500 km/dia** — o resultado deve ser expresso em **dias inteiros**.
+Escreva um programa em Java que leia:
+- o peso da encomenda em kg (**double**)
+- o valor declarado da mercadoria (**double**)
+- a distância até o destino em km (**int**)
+
+O programa deverá calcular e exibir:
+- o frete por peso  
+- o valor do seguro  
+- o total do frete (**todos com duas casas decimais**)  
+- o prazo estimado (**dias inteiros**)
+
+#### 📥 ENTRADAS
+| Variável   | Tipo   | Descrição                     |
+|------------|--------|------------------------------|
+| pesoKg     | double | Peso da encomenda            |
+| valorMerc  | double | Valor declarado              |
+| distKm     | int    | Distância até o destino (km) |
+
+#### 📤 SAÍDAS
+| Descrição              | Fórmula                     |
+|------------------------|-----------------------------|
+| Frete por peso (R$)    | pesoKg × 3.20              |
+| Seguro (R$)            | valorMerc × 0.02           |
+| Total frete (R$)       | fretePeso + seguro         |
+| Prazo (dias)           | distKm / 500               |
+
+#### EXEMPLO
+
+**Entrada**:  pesoKg = 12.5  |  valorMerc = 800.0  |  distKm = 1350  
+**Saída**:  Frete: R$ 40.00  |  Seguro: R$ 16.00  |  Total: R$ 56.00  |  Prazo: 2 dia(s)
+
+**⚠️ Observação**: O prazo usa **divisão inteira (int / int)** — o resto dos km é descartado automaticamente.
+
+#### Exercício 08 — Rendimento mensal e imposto de renda
+Um investidor deseja saber quanto sua aplicação rendeu no mês e qual o imposto de renda a recolher.  
+O rendimento bruto é calculado sobre o capital aplicado; o imposto incide sobre o rendimento bruto; o rendimento líquido é o valor que efetivamente fica na conta do investidor.
+
+Escreva um programa em Java que leia:
+- o capital aplicado (**double**)
+- a taxa mensal em percentual (**double**)
+- a alíquota do IR em percentual (**double**)
+
+O programa deverá calcular e exibir:
+- o rendimento bruto  
+- o imposto  
+- o rendimento líquido  
+- o saldo total na conta  
+
+Todos os valores devem ser exibidos com **duas casas decimais**.
+
+#### 📥 ENTRADAS
+| Variável     | Tipo   | Descrição                             |
+|--------------|--------|--------------------------------------|
+| capital      | double | Valor aplicado em R$                 |
+| taxaMensal   | double | Taxa de rendimento mensal (%)        |
+| aliquotaIR   | double | Alíquota do imposto de renda (%)     |
+
+#### 📤 SAÍDAS
+| Descrição               | Fórmula                             |
+|------------------------|--------------------------------------|
+| Rend. bruto (R$)       | capital × (taxaMensal / 100)        |
+| Imposto IR (R$)        | rendBruto × (aliquotaIR / 100)      |
+| Rend. líquido (R$)     | rendBruto − imposto                 |
+| Saldo total (R$)       | capital + rendLiquido               |
+
+#### EXEMPLO
+
+**Entrada**:  capital = 15000.0  |  taxaMensal = 0.85  |  aliquotaIR = 15.0  
+**Saída**:  Rend. bruto: R$ 127.50  |  Imposto: R$ 19.13  |  Líquido: R$ 108.38  |  Saldo: R$ 15108.38
+
+**⚠️ Observação**: Use `double` para preservar precisão nos cálculos encadeados.
